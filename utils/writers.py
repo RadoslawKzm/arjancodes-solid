@@ -16,6 +16,7 @@ class Strategy(abc.ABC):
         Strategy.registry[cls.__name__.lower()] = cls
 
     def __call__(self, report:REPORT):
+        """Simple call method as `writer` name is self-explanatory"""
         return self.write(report=report)
 
     @abc.abstractmethod
